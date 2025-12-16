@@ -183,7 +183,7 @@ class SignalProcessingAnalyzer:
         #true_acne_mask = np.logical_and(blemish_mask, ~lip_zone)
         true_acne_mask = np.logical_and(blemish_mask,~lip_area)
         # 最後對真痘痘做一點點膨脹，確保覆蓋完整
-        true_acne_mask = ndimage.binary_dilation(true_acne_mask, structure=np.ones((3,3)))
+        true_acne_mask = ndimage.binary_dilation(true_acne_mask, structure=np.ones((2,2)))
 
         # 測試區
         plt.imshow(red_areas, cmap='gray')
